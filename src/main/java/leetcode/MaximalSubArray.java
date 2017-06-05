@@ -13,7 +13,8 @@ public class MaximalSubArray {
         int[] nums2 = {-3, -2, 0, -4};
         int[] nums3 = {-3, -2, 0, 2};
         int[] nums4 = {-1, 4, -3, -2};
-        List<Integer> integers = obj.maxSubArrayList(Arrays.stream(nums4).boxed().collect(Collectors.toList()));
+        int[] nums5 = {-3, -4, -1, -2};
+        List<Integer> integers = obj.maxSubArrayList(Arrays.stream(nums5).boxed().collect(Collectors.toList()));
         System.out.println("integers = " + integers);
     }
 

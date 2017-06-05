@@ -23,6 +23,8 @@ For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3.
  */
 public class LowestCommonAncestor {
 
+    // TODO: Write code for when a binary search tree
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
        return lca(root, p, q);
        // would use containsNodes if p and q not guaranteed in tree, but here they are
@@ -43,6 +45,8 @@ public class LowestCommonAncestor {
 
         return left != null ? left : right;
     }
+
+
 
     private boolean containsNodes(TreeNode root, TreeNode p, TreeNode q) {
         Queue<TreeNode> queue = new LinkedList<>();
