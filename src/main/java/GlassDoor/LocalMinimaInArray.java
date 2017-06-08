@@ -1,5 +1,7 @@
 package GlassDoor;
 
+import java.util.Stack;
+
 /**
  * http://www.geeksforgeeks.org/find-local-minima-array/
  *
@@ -42,6 +44,8 @@ public class LocalMinimaInArray {
             return mid;
         }
 
+        Stack<Character> leftStack = new Stack<>();
+
         if (mid - 1 >= 0 && nums[mid - 1] < nums[mid]) { // If mid > left element there must be local minima to left of mid
             return findLocalMinima(nums, start, mid-1);
         } else {
@@ -51,7 +55,6 @@ public class LocalMinimaInArray {
 
     public static void main(String[] args) {
         LocalMinimaInArray obj = new LocalMinimaInArray();
-
         System.out.println(obj.findLocalMinima(new int[]{3, 2, 1}));
     }
 }
