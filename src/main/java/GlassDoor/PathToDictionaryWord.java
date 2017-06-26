@@ -44,7 +44,7 @@ public class PathToDictionaryWord {
                 for (char currChar = 'a'; currChar <= 'z'; currChar++) {
                     String newWord = currWord.substring(0, i) + currChar + currWord.substring(i + 1, input.length());
                     if (dict.contains(newWord)) {
-                        List<String> copy = new ArrayList<>(currPath);
+                        List<String> copy = new ArrayList<>(currPath); // Could store prevNode in WordNode to avoid copying lists then build once we find an answer.
                         copy.add(newWord);
                         queue.add(new WordNode(newWord, copy));
                         dict.remove(newWord);
@@ -59,6 +59,7 @@ public class PathToDictionaryWord {
     private static class WordNode {
         String word;
         List<String> path;
+        // Could store prevNode here to avoid copying lists then build once we find an answer.
 
         WordNode(String word, List<String> path) {
             this.word = word;

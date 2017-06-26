@@ -39,8 +39,7 @@ return
 
         if (root.left == null & root.right == null) {
             if (currSum == target) {
-                List<Integer> copy = new ArrayList<>(currPath);
-                output.add(copy);
+                output.add(new ArrayList<>(currPath));
             }
             currPath.remove(currPath.size() - 1); // remove the current node
             return output;

@@ -1,10 +1,19 @@
 package leetcode;
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    @Override
+    public String toString() {
+        return "val: " + val;
     }
 }

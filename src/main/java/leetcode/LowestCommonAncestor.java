@@ -47,7 +47,6 @@ public class LowestCommonAncestor {
     }
 
 
-
     private boolean containsNodes(TreeNode root, TreeNode p, TreeNode q) {
         Queue<TreeNode> queue = new LinkedList<>();
 

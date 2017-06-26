@@ -7,29 +7,29 @@ import java.util.stream.Collectors;
 
 public class PermuteIntegerList {
 //
-//    static List<List<Integer>> permuteSwap(List<Integer> nums) {
-//     return permuteSwap(nums, 0, new ArrayList<>(new ArrayList<>()));
-//    }
+    static List<List<Integer>> permuteSwap(List<Integer> nums) {
+     return permuteSwap(nums, 0, new ArrayList<>(new ArrayList<>()));
+    }
+
+    static List<List<Integer>> permuteSwap(List<Integer> nums, int currIndex, List<List<Integer>> output) {
+        if (currIndex == nums.size()) {
+            System.out.println(nums);
+            output.add(new ArrayList<>(nums));
+        } else {
+            for (int i = currIndex; i < nums.size(); i++) {
+                swap(nums, i, currIndex);
+                permuteSwap(nums, currIndex+1, output);
+                swap(nums, i, currIndex);
+            }
+        }
+        return output;
+    }
 //
-//    static List<List<Integer>> permuteSwap(List<Integer> nums, int currIndex, List<List<Integer>> output) {
-//        if (currIndex == nums.size()) {
-//            System.out.println(nums);
-//            output.add(new ArrayList<>(nums));
-//        } else {
-//            for (int i = currIndex; i < nums.size(); i++) {
-//                swap(nums, i, currIndex);
-//                permuteSwap(nums, currIndex+1, output);
-//                swap(nums, i, currIndex);
-//            }
-//        }
-//        return output;
-//    }
-//
-//    private static void swap(List<Integer> nums, Integer first, Integer second) {
-//        Integer temp = nums.get(second);
-//        nums.set(second, nums.get(first));
-//        nums.set(first, temp);
-//    }
+    private static void swap(List<Integer> nums, Integer first, Integer second) {
+        Integer temp = nums.get(second);
+        nums.set(second, nums.get(first));
+        nums.set(first, temp);
+    }
 //
 //    static List<List<Integer>> permuteBackTrack(List<Integer> nums) { // only works if no duplicates
 //        return permuteBackTrack(nums, new ArrayList<>(), new ArrayList<>(new ArrayList<>()));
@@ -99,11 +99,11 @@ public class PermuteIntegerList {
 //        return output;
 //    }
 //
-//    public static void main(String[] args) {
-//        final PermuteIntegerList obj = new PermuteIntegerList();
+    public static void main(String[] args) {
+        final PermuteIntegerList obj = new PermuteIntegerList();
 //
-//        List<Integer> input = Arrays.stream(new int[]{1, 2, 3}).boxed().collect(Collectors.toList());
-////        obj.permute(new int[]{1, 2, 3});
+        List<Integer> input = Arrays.stream(new int[]{1, 2, 3, 3}).boxed().collect(Collectors.toList());
+        permuteSwap(input);
 //        permuteSwap(input);
 ////        permuteBackTrack(input);
 ////        obj.permute(new int[]{1, 2, 3});
@@ -112,5 +112,5 @@ public class PermuteIntegerList {
 ////        final List<Integer> integers = Lists.newArrayList(1, 2).subList(2, 2);
 ////        System.out.println("integers = " + integers);
 ////        System.out.println("permute = " + permute);
-//    }
+    }
 }

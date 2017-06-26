@@ -16,6 +16,34 @@ public class LongestCommonPrefix {
             return "";
         }
 
+        String longestSoFar = strs[0];
+
+        for (int i = 1; i < strs.length; i++) {
+            String curr = strs[i];
+            int index = 0;
+            StringBuilder builder = new StringBuilder();
+            while (index < Math.min(curr.length(), longestSoFar.length())) {
+                if (curr.charAt(index) == longestSoFar.charAt(index)) {
+                    builder.append(curr.charAt(index));
+                    index++;
+                } else {
+                    break;
+                }
+            }
+            longestSoFar = builder.toString();
+            if (longestSoFar.isEmpty()) {
+                return "";
+            }
+        }
+        return longestSoFar;
+    }
+
+    public String longestCommonPrefix2(String[] strs) {
+
+        if (strs.length == 0) {
+            return "";
+        }
+
         String longestSoFar = "";
 
         for (String word: strs) {
