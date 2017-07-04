@@ -45,6 +45,4 @@ public class RobotGrid {
         final int numWays = numPaths(0, 0, new int[3][3], new Node(2, 2));
         System.out.println("numPaths = " + numWays);
     }
-
-
 }
